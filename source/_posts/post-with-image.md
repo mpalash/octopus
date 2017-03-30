@@ -8,5 +8,4 @@ tags:
 
 This is a test with images
 
-![null](/public/images/be-0.jpg)
-
+![null](/images/be-0.jpg)
