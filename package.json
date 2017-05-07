@@ -5,6 +5,12 @@
   "hexo": {
     "version": "3.2.2"
   },
+  "scripts": {
+    "start": "hexo server"
+  },
+  "engines": {
+    "node": "5.5.0"
+  },
   "dependencies": {
     "hexo": "^3.2.0",
     "hexo-generator-archive": "^0.1.4",
