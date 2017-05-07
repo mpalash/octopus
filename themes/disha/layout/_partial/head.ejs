@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="<% if (page.class){ %><%= page.class %><% } %>">
+<head>
+  <meta charset="utf-8">
+  <%
+  var title = page.title;
+
+  if (is_archive()){
+    title = __('archive_a');
+
+    if (is_month()){
+      title += ': ' + page.year + '/' + page.month;
+    } else if (is_year()){
+      title += ': ' + page.year;
+    }
+  } else if (is_category()){
+    title = __('category') + ': ' + page.category;
+  } else if (is_tag()){
+    title = __('tag') + ': ' + page.tag;
+  }
+  %>
+  <title><%= config.title %><% if (title){ %>| <%= title %><% } %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
+  <script src="https://use.typekit.net/old1jxz.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    $(function(){
+      var docHeight = $('body').height();
+      var winHeight = $(window).height();
+      if(winHeight > docHeight) {
+        $('html').addClass('disable-back-to-top');
+      }
+      $('.back-to-top a').each(function(){
+        $(this).click(function(event){
+          event.preventDefault();
+          $('html,body').animate({ scrollTop: 0 }, 200);
+          return false;
+        });
+      });
+    });
+  </script>
+  <%- css('css/style') %>
+  <%- partial('google-analytics') %>
+</head>

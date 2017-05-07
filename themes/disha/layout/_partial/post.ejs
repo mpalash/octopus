@@ -1,0 +1,14 @@
+<article class="rich-text project">
+  <h1>
+    <%- post.title %>
+    <span class="tags">
+      <% page.tags.each(function(tag){ %>
+        <span><%= tag.name %></span>
+      <% }) %>
+    </span>
+  </h1>
+  <%- post.content %>
+</article>
+<section class="back-to-top">
+  <a href="#"><span class="arrow">↑</span>Back to Top</a>
+</section>

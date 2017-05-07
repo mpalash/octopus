@@ -1,0 +1,15 @@
+<%- partial('_partial/head') %>
+<body class="transition-enabled transition-in link-transition <% if (page.class){ %><%= page.class %><% } %>">
+  <div class="site-wrap">
+    <div class="site-container">
+      <div class="site-content">
+        <div class="sidebar-content">
+          <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+        </div>
+        <main><%- body %></main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
