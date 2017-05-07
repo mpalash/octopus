@@ -1,4 +1,5 @@
 ---
+layout: blog
 title: Premiere
 tags:
   - Concept Design

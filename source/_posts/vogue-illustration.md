@@ -1,4 +1,5 @@
 ---
+layout: blog
 title: Vogue Illustration
 tags:
   - Illustration
